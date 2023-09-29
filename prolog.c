@@ -24,7 +24,6 @@ PrologResult prolog(int socket, GameServerConfig *config) {
   }
   bzero(messageBuffer, MESSAGE_BUFFER_LENGTH);
 
-  //Happy With AI      !!! Variable Nachricht/wird durch Updates angepasst
   if (!receiveLine(socket, messageBuffer, MESSAGE_BUFFER_LENGTH) ||
       !isExpectedPrologVar(messageBuffer) ||
       !prettyPrintVar(messageBuffer)) {

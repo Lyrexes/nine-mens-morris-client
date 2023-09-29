@@ -160,7 +160,6 @@ int evaluatePiecesOnBoard(int board[], int value) {
       piecesOpponent++;
     }
   }
-  //printf("Der Client hat %d und der Gegner %d Steine auf dem Spielbrett.\n", piecesClient, piecesOpponent);
   return result;
 }
 
@@ -245,7 +244,6 @@ int evaluateMills(int board[], int value) {
     y = y + 2;
     z = z + 2;
   }
-  //printf("Der Client hat %d und der Gegener %d Mühlen.\n", millsClient, millsOpponent);
   return result;
 }
 
@@ -384,17 +382,6 @@ bool think(int fd[2], int n, int sharedMemoryID) {
       strcpy(move, boardPositions[opponentPieces[randomCapture]]);
     }
 
-    /*for (int i = 0; i < sharedMemoryPtr->currentMove.pieceAmount; i++) {
-      if (sharedMemoryPtr->currentMove.pieces[i].playerID !=
-              sharedMemoryPtr->clientPlayerID &&
-          !sharedMemoryPtr->currentMove.pieces[i].isAvailable &&
-          !sharedMemoryPtr->currentMove.pieces[i].isCaptured) {
-
-        strcpy(move,
-               boardPositions[sharedMemoryPtr->currentMove.pieces[i].position]);
-        break;
-      }
-    }*/
   } else if (countMoves <= 8) {
     printf("Wir sind in der Setzphase!\n");
     placePiece(move, sharedMemoryID);
@@ -540,10 +527,6 @@ void movePiece(char *move) {
 
             strcpy(possibleMoves[countPossibleMoves], movesNames[j]);
             countPossibleMoves++;
-            // countMoves++;
-            // printf("MOVE DEN WIR SENDEN: %s\n", move);
-            // detachSharedMemory(sharedMemoryPtr);
-            // return;
           }
         }
       }

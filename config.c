@@ -48,7 +48,7 @@ GameServerConfig parseArguments(int argc, char* argv[]) {
     exit(EXIT_FAILURE);
   }
 
-  // Leerzeichen in der KOnfigurationsdatei entfernen
+  // Leerzeichen in der Konfigurationsdatei entfernen
   removeBlankSpaces(configfile);
 
   // HOSTNAME

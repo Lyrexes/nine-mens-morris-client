@@ -66,8 +66,6 @@ bool performConnection(int socket, GameServerConfig *config, int sharedMemoryID,
         exit(EXIT_FAILURE);
       }                               // Signal senden
 
-      //event.data.fd = fd[0];
-      //event.events = EPOLLIN | EPOLLET;
       temp = epoll_ctl(epoll_fd, EPOLL_CTL_ADD, fd[0], &event);
       if(temp == -1){
         printf("Fehler bei epoll_ctl: Konnte fd[0] nicht hinzufügen\n");
